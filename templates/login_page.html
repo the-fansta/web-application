@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN PAGE</title>
+    <link rel="stylesheet" href="./static/style.css">
+<style>
+   
+    body{
+        background-image: url(./static/photo-1603796846097-bee99e4a601f.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+   
+    p{
+     font-size:25px ;
+     line-height: 30px;
+     color: #000;
+     text-align: center;
+     font-weight: 900;
+
+    }
+    form label{
+            color: rgb(0, 12, 12);
+            font-weight: normal;
+            font-size: xx-large;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    form{
+        margin-top: 10%;
+        width: 15%;
+        height: 500px;
+        margin-left: 5%;
+        padding: 30px;
+        line-height: 30px;
+        background-color: transparent;
+    }
+    button{
+        color: rgb(93, 226, 40);
+        background-color: rgb(17, 8, 68);
+        padding:6%;
+        border-radius: 20px;
+        font-weight: bold;
+    }
+    button:hover{
+        background-color: rgb(238, 40, 26);
+    }
+    input{
+        background-color: rgb(245, 245, 245);
+        color: rgb(151, 152, 190);
+        font-weight: bolder;     
+    }
+    </style>
+</style>
+</head>
+<body>
+    <form action="/validate_user">
+        <p>REGISTER</p>
+        <label for="">Username :</label>
+        <input type="text" name="username">
+        <label for="">Password :</label>
+        <input type="password" name="password">
+        <button type="submit">Submit</button>
+    </form>
+    {{message}}
+</body>
+</html>

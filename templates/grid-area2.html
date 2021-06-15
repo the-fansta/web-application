@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid area</title>
+    <style>
+        *{
+            margin: 0;
+            
+        }
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            gap: 1em;
+            grid-template-columns: 200px 1fr 1fr ;
+            grid-template-rows: 1fr 2fr 2fr 1fr;
+            grid-template-areas: 
+            "header header header"
+            "sidebar Content1 Content1"
+            "sidebar Content2 Content3"
+            "footer footer footer";
+        }
+        .header{
+            grid-area:header ;
+            background-image: linear-gradient(rgb(207, 63, 207),rgb(247, 18, 144));
+            border: 3px solid;
+        }
+        .sidebar{
+            grid-area:sidebar;
+            background-image: linear-gradient(rgb(85, 93, 192),rgb(20, 7, 202));
+            border: 3px solid;
+        }
+        .Content1{
+            grid-area:Content1;
+            background-image: linear-gradient(rgb(63, 197, 207),rgb(3, 67, 71));
+            border: 3px solid;
+        }
+        .Content2{
+            grid-area:Content2;
+            background-image: linear-gradient(rgb(104, 212, 122),rgb(5, 80, 15));
+            border: 3px solid;
+        }
+        .Content3{
+            grid-area:Content3;
+            background-image: linear-gradient(rgb(207, 63, 207),rgb(36, 0, 83));
+            border: 3px solid;
+        }
+        .footer{
+            grid-area:footer;
+            background-image: linear-gradient(rgb(207, 63, 207),purple);
+            border: 3px solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="Content1">Content1</div>
+        <div class="Content2">Content2</div>
+        <div class="Content3">Content3</div>
+        <div class="footer">Footer</div>
+    </div>
+</body>
+</html>

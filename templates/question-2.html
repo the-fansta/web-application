@@ -1,0 +1,40 @@
+{%extends "base.html"%}
+    {%block content%}
+    
+    <div class="wrapper">
+        <div class="title">
+            <form action="/validate_q2" method="POST">
+            <h4>2) Which scientist formulated the periodic table??</h4>
+            <div class="box">
+                <input type="radio" name="select" id="option-1" value="1">
+                <input type="radio" name="select" id="option-2" value="2">
+                <input type="radio" name="select" id="option-3" value="3">
+                <input type="radio" name="select" id="option-4" value="4">
+                
+                <label for="option-1" class="option-1">
+                    <div class="dot"></div>
+                    <div class="text">John Dalton</div>
+                            
+                    
+                </label>
+                <label for="option-2" class="option-2">
+                    <div class="dot"></div>
+                    <div class="text">Daniel Rutherfold</div>
+                            
+                    
+                </label>
+                <label for="option-3" class="option-3">
+                    <div class="dot"></div>
+                    <div class="text">Demitri Mendeleev</div>
+                            
+                    
+                </label>
+                <button><a href="/q3">Next</a></button>
+                <button type="submit">Click to Submit</button>
+                <h5 class="message">{{message}}</h5> 
+                <h5 class="Score">Your score is {{score}}</h5>
+            </div>
+        </div>
+    </form>
+    </div>
+    {%endblock%}

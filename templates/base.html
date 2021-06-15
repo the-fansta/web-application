@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="../static/style-quiz.css">
+    <style>
+        .wrapper .box{
+            background-color: rgb(27, 194, 236);
+        }
+        html,body{
+            background-image:url(../static/terry-vlisidis-RflgrtzU3Cw-unsplash.jpg);
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
+        }
+        .wrapper{
+            margin-left:77% ;
+            position: relative;
+            bottom: 50px;
+        }
+        header{
+            position: relative;
+            right: 20%;
+        }
+        .wrapper .title{
+            background-color: navy;
+        }
+        .btn-gradient {
+
+width: 200px;
+
+height: 40px;
+
+border: none;
+
+border-radius: 10px;
+
+color: rgb(178, 240, 8);
+
+animation: c 53s linear infinite;
+
+background: linear-gradient(
+
+121.19deg,
+
+rgba(133, 239, 49, 0) 25.73%,
+
+hsla(0, 0%, 100%, 0.3) 45.27%,
+
+rgba(133, 239, 49, 0) 62.27% ), rgb(0, 0, 0);
+
+transition: background-color 0.5s ease;
+
+}
+
+.btn-gradient:hover {
+
+animation: c 53s linear infinite;
+
+background: linear-gradient(
+
+121.19deg,
+
+rgba(133, 239, 49, 0) 25.73%,
+
+hsla(0, 0%, 100%, 0.3) 45.27%,
+
+rgba(133, 239, 49, 0) 62.27% ), white;
+
+}
+
+@keyframes c {
+
+0% {
+
+background-position: -5000px 0;
+
+}
+
+to {
+
+background-position: 5000px 0;
+
+}
+
+}
+.bg{
+    background-color:#5f788a;
+}
+
+    </style>
+</head>
+<body>
+<header>
+    <nav>
+        <ul>
+            <li><a href="">HOME</a></li>
+            <li><a href="">ABOUT ME</a></li>
+            <li><a href="">LOGIN/REGISTER</a></li>
+            <li><a href="">CONTACTORS</a></li>
+            <li><a href="">MY PROJECTS</a></li>
+        </ul>
+    </nav>
+</header>
+{%block content%}
+{%endblock%}
+</body>
+</html>

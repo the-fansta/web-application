@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Quiz</title>
+    <style>
+        body{
+            background-color: black;
+            color: aquamarine;
+        }
+        form{
+            margin-top: 10%;
+        }
+        h2{
+            margin-left: 40%;
+        }
+        .message{
+            color: rgb(195, 252, 248);
+        }
+        .score{
+            color: rgb(195, 252, 248);
+        }
+    </style>
+</head>
+<body>
+    <h2>SPACE QUIZ!!!!!!!!!!</h2>
+    <form action="Q5">
+        <h3>
+            Q5)I'm named after the roman god of war and poeple are planning to visit me. Who am i???
+        </h3>
+        <label for="">
+            A.Jupiter
+        </label>
+        <input type="radio" name="Options" value="A" id="">
+        <label for="">
+            B. Venus
+        </label>
+        <input type="radio" name="Options" value="B" id="">
+        <label for="">
+            C.Earth
+        </label>
+        <input type="radio" name="Options" value="C" id="">
+        <label for="">
+            D.Mars
+        </label>
+        <input type="radio" name="Options" value="" id="">
+        <button type="submit">Submit</button>
+    </form>
+    <h4 class="message">{{message}}</h4>
+    <h4 class="Score">You're score is {{score}}</h4>
+</body>
+</html>

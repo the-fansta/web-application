@@ -1,0 +1,39 @@
+{%extends "base.html"%}
+    {%block content%}
+    <div class="wrapper">
+        <div class="title">
+            <form action="/validate_q4" method="POST">
+            <h4>4) A medicine used to cure pain,fever & inflammation??</h4>
+            <div class="box">
+                <input type="radio" name="select" id="option-1" value="1">
+                <input type="radio" name="select" id="option-2" value="2">
+                <input type="radio" name="select" id="option-3" value="3">
+                <input type="radio" name="select" id="option-4" value="4">
+                
+                <label for="option-1" class="option-1">
+                    <div class="dot"></div>
+                    <div class="text">Anaesthetic</div>
+                            
+                    
+                </label>
+                <label for="option-2" class="option-2">
+                    <div class="dot"></div>
+                    <div class="text">Aspirin</div>
+                            
+                    
+                </label>
+                <label for="option-3" class="option-3">
+                    <div class="dot"></div>
+                    <div class="text">Antacid</div>
+                            
+                    
+                </label>
+                <button></button><a href="/q5">Next</a></button>
+                <button type="submit">Click to Submit</button>
+                <h5 class="message">{{message}}</h5> 
+                <h5 class="Score">Your score is {{score}}</h5>
+            </div>
+        </div>
+    </form>
+    </div>
+    {%endblock%}
