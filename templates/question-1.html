@@ -1,10 +1,13 @@
 {%extends "base.html"%}
-    {%block content%}
+{%block quotes%}
+<img src="../static/mert-talay-KYZoOmpn1Aw-unsplash.jpg" alt="">
+{%endblock quotes%}
+    {%block quiz%}
     
     <div class="wrapper">
         <div class="title">
-            <form action="/validate_q1" method="POST">
-            <h4>1) Which branch of science deals with forms of energy??</h4>
+            <form action="/q1" method="POST">
+            <h4>Q1) Which branch of science deals with forms of energy??</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -29,7 +32,6 @@
                             
                     
                 </label>
-                <button class="btn-gradient"><a href="/q2">Next</a></button>
                 <button type="submit" class="btn-gradient">Click to Submit</button>
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your score is {{score}}</h5>
@@ -37,4 +39,4 @@
         </form>
         </div>
     </div>
-    {%endblock%}
+{%endblock quiz%}

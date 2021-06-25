@@ -1,12 +1,10 @@
 {%extends "base.html"%}
-{%block quotes%}
-<img src="../static/mert-talay-KYZoOmpn1Aw-unsplash.jpg" alt="">
-{%endblock quotes%}
     {%block quiz%}
+    
     <div class="wrapper">
         <div class="title">
-            <form action="/q4" method="POST">
-            <h4>4) A medicine used to cure pain,fever & inflammation??</h4>
+            <form action="/q9" method="POST">
+            <h4>Q9) What's the the spot on Jupiter called, Is it larger than earth???</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -15,27 +13,34 @@
                 
                 <label for="option-1" class="option-1">
                     <div class="dot"></div>
-                    <div class="text">Anaesthetic</div>
+                    <div class="text">A.Red Spot,Yes</div>
                             
                     
                 </label>
                 <label for="option-2" class="option-2">
                     <div class="dot"></div>
-                    <div class="text">Aspirin</div>
+                    <div class="text">B. Red Spot,No</div>
                             
                     
                 </label>
                 <label for="option-3" class="option-3">
                     <div class="dot"></div>
-                    <div class="text">Antacid</div>
+                    <div class="text">C.Big Spot,Yes</div>
                             
                     
                 </label>
+                <label for="option-4" class="option-4">
+                    <div class="dot"></div>
+                    <div class="text">D.Big Spot,No</div>
+                            
+                    
+                </label>
+
                 <button type="submit" class="btn-gradient">Click to Submit</button>
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your score is {{score}}</h5>
             </div>
+        </form>
         </div>
-    </form>
     </div>
     {%endblock quiz%}

@@ -1,62 +1,74 @@
-from flask import Flask,render_template,request,session
+from flask import Flask,render_template,request,session,flash
 #Flask is a micro framework
 
 app=Flask(__name__)
 app.config["SECRET_KEY"]="1234"
-@app.route('/')
-def home():
-    return "WELCOME"
 
+@app.route('/')
 @app.route('/home')
 def hello():
-    return render_template("h1.html")
+    return render_template("index.html")
 
-@app.route('/number', methods=['GET', 'POST'])
-def number():
-    return render_template("create.html") 
+@app.route('/aboutme')
+def aboutme():
+    return render_template('aboutme.html')
 
-@app.route('/even_or_odd', methods=['GET', 'POST'])
-def even_or_odd():
-    num=request.form.get("number")
-    num=int(num)
-    message=""
-    if num%2==0: 
-        message="This is an even number"
+@app.route('/register')
+def register():
+    return render_template('registration.html')
+
+@app.route('/validate_register',methods=['POST'])
+def validate_register():
+    username=request.form.get('username')
+    email=request.form.get('password')
+    password=request.form.get('password')
+    confirm_password=request.form.get('confirm_password')
+    message=''
+    if password==confirm_password:
+        print('Registration Successful')
+        message='Registration Successful'
+        session['username']=username
+        session['email'] =email
+        return render_template('login_page.html',message=message)
     else:
-        message="This is an odd number"
-    return render_template("create.html",message=message)
-
-@app.route('/get_string')
-def get_string():
-    return render_template("okay.html")
-   
-@app.route('/reverse_string')
-def reverse_string():
-    str=request.args.get("string")
-    rev_str=""
-    for i in str:
-        rev_str=i+rev_str
-    return render_template("okay.html",rev_str=rev_str) 
-
+        print('Password mismatch')
+        
+        message='password mismatch'
+        return render_template('register.html',message=message)
 
 @app.route('/login_page')
 def login_page():
    return render_template("login_page.html")
 
-
-@app.route('/validate_user')
+@app.route('/validate_user',methods=['POST'])
 def validate_user():
-    users={"User_1":1234,"User_2":4321,"User_3":0000}
-    user_name=request.args.get("username")
-    password=request.args.get("password",type=int)
-    get_user=users.get(user_name)
+    user_name=request.form.get("username")
+    password=request.form.get("password")
+    print(password)
+    session['password']=password
     message=""
-    if get_user==password:
-        message="You have succesfully logged in!!!😃"
+    
+    session_un=session.get('username')
+    print(session_un)
+    session_pwd=session.get('password')
+    print(session_pwd)
+    session_email=session.get('email')
+    print(session_email)
+    if session_un==user_name or session_email==user_name :
+        if (session_pwd)==password :
+            message="You have succesfully logged in!!!😃"
+            flash('You were successfully logged in',)
+            session['username']=user_name
+            session['authenticated'] =True
+            return render_template('question-1.html',message=message,score=0)
+        else:
+            message='Incorrect Password'
+            session['authenticated'] =False
+            return render_template('login_page.html',message=message)
     else:
-        message="You have failed to login!!!😔"
-    return render_template("login_page.html",message=message)
-
+        message='incorrect Username'
+        flash("You have failed to login!!!😔")
+        return render_template('login_page.html',message=message)
 
 @app.route('/riddle_1')
 def riddle_1():
@@ -82,39 +94,108 @@ riddles=[{
 
 
 
+# -------Validating Quiz---Important Function---------------------
+def validatequiz(correct_answer):
+    option=request.form.get("select")
+    message=""
+    score=session.get("user_score",0)   
+    if option==correct_answer:
+        message="Excellent, You are Right!!"
+        score=score+20
+    else:
+        message="Nice try,The right answer is B"
+    flash(message)
+    session["user_score"]=score
+    return message
 
 
+#--------------------Quiz-------------------------------------------
 
 
+#--------------------Q1-------------------------------------------
 
+@app.route('/get_q1')
+def get_q1():
+    score=0
+    return render_template("question-1.html",score=score)
+    
+@app.route('/q1',methods=['POST'])
+def q1():
+   message = validatequiz('2')
+   score=session.get("user_score",0)
+   return render_template("question-2.html",message=message,score=score)
 
+#--------------------Q2-------------------------------------------
 
+@app.route('/q2',methods=['POST'])
+def q2():
+    message = validatequiz('2')
+    score=session.get("user_score",0)
+    return render_template("question-3.html",message=message,score=score)
 
+#--------------------Q3-------------------------------------------
 
+@app.route('/q3',methods=['POST'])
+def q3():
+    message = validatequiz('3')
+    score=session.get("user_score",0)
+    return render_template("question-4.html",message=message,score=score)
 
+#--------------------Q4-------------------------------------------
 
+@app.route('/q4',methods=['POST'])
+def q4():
+    message = validatequiz('4')
+    score=session.get("user_score",0)
+    return render_template("question-5.html",message=message,score=score)
 
+#--------------------Q5-------------------------------------------
 
+@app.route('/q5',methods=['POST'])
+def q5():
+    message = validatequiz('2')
+    score=session.get("user_score",0)
+    return render_template("question-6.html",message=message,score=score)
 
+#--------------------Q6-------------------------------------------
 
+@app.route('/q6',methods=['POST'])
+def q6():
+    message = validatequiz('4')
+    score=session.get("user_score",0)
+    return render_template("question-7.html",message=message,score=score)
 
+#--------------------Q7-------------------------------------------
 
+@app.route('/q7',methods=['POST'])
+def q7():
+    message = validatequiz('4')
+    score=session.get("user_score",0)
+    return render_template("question-8.html",message=message,score=score)
 
+#--------------------Q8-------------------------------------------
 
+@app.route('/q8',methods=['POST'])
+def q8():
+    message = validatequiz('4')
+    score=session.get("user_score",0)
+    return render_template("question-9.html",message=message,score=score)
 
+#--------------------Q9-------------------------------------------
 
+@app.route('/q9',methods=['POST'])
+def q9():
+    message = validatequiz('2')
+    score=session.get("user_score",0)
+    return render_template("question-10.html",message=message,score=score)
 
+#--------------------Q10-------------------------------------------
 
-
-
-
-
-
-
-
-
-
-
+@app.route('/q10',methods=['POST'])
+def q10():
+    message = validatequiz('1')
+    score=session.get("user_score",0)
+    return render_template("thank_you.html",message=message,score=score)
 
 if __name__=="__main__":
     app.run(debug=True)

@@ -1,9 +1,12 @@
 {%extends "base.html"%}
-  {%block content%}
+{%block quotes%}
+<img src="../static/hello-i-m-nik-z1d-LP8sjuI-unsplash.jpg" alt="">
+{%endblock quotes%}
+  {%block quiz%}
     <div class="wrapper">
         <div class="title">
-            <form action="/validate_q5" method="POST">
-            <h4>5) A water soluble used to clean colthes??</h4>
+            <form action="/q5" method="POST">
+            <h4>Q5) A water soluble used to clean colthes??</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -28,10 +31,10 @@
                             
                     
                 </label>
-                <button type="submit">Click to Submit</button>
+                <button type="submit" class="btn-gradient">Click to Submit</button>
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your final score is {{score}}</h5>
         </div>
       </form>
     </div>
-    {%endblock%}
+ {%endblock quiz%}

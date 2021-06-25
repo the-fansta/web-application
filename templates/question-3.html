@@ -1,8 +1,11 @@
 {%extends "base.html"%}
-    {%block content%}
+{%block quotes%}
+<img src="../static/mert-talay-KYZoOmpn1Aw-unsplash.jpg" alt="">
+{%endblock quotes%}
+    {%block quiz%}
     <div class="wrapper">
         <div class="title">
-            <form action="/validate_q3" method="POST">
+            <form action="/q3" method="POST">
             <h4>3) Which synthetic fibre is used in clothing??</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
@@ -28,12 +31,11 @@
                             
                     
                 </label>
-                <button><a href="/q4">Next</a></button>
-                <button type="submit">Click to Submit</button>
+                <button type="submit" class="btn-gradient">Click to Submit</button>
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your score is {{score}}</h5>
             </div>
         </div>
     </form>
     </div>
-    {%endblock%}
+    {%endblock quiz%}

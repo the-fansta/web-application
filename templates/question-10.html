@@ -1,12 +1,10 @@
 {%extends "base.html"%}
-{%block quotes%}
-<img src="../static/mert-talay-KYZoOmpn1Aw-unsplash.jpg" alt="">
-{%endblock quotes%}
     {%block quiz%}
+    
     <div class="wrapper">
         <div class="title">
-            <form action="/q4" method="POST">
-            <h4>4) A medicine used to cure pain,fever & inflammation??</h4>
+            <form action="/q10" method="POST">
+            <h4>Q10) I'm named after the roman god of war and poeple are planning to visit me. Who am i???</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -15,19 +13,25 @@
                 
                 <label for="option-1" class="option-1">
                     <div class="dot"></div>
-                    <div class="text">Anaesthetic</div>
+                    <div class="text">A.Jupiter</div>
                             
                     
                 </label>
                 <label for="option-2" class="option-2">
                     <div class="dot"></div>
-                    <div class="text">Aspirin</div>
+                    <div class="text">B. Venus</div>
                             
                     
                 </label>
                 <label for="option-3" class="option-3">
                     <div class="dot"></div>
-                    <div class="text">Antacid</div>
+                    <div class="text">C.Earth</div>
+                            
+                    
+                </label>
+                <label for="option-4" class="option-4">
+                    <div class="dot"></div>
+                    <div class="text">D.Mars</div>
                             
                     
                 </label>
@@ -35,7 +39,7 @@
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your score is {{score}}</h5>
             </div>
+        </form>
         </div>
-    </form>
     </div>
     {%endblock quiz%}

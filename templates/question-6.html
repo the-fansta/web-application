@@ -1,12 +1,20 @@
-{%extends "base.html"%}
-{%block quotes%}
-<img src="../static/mert-talay-KYZoOmpn1Aw-unsplash.jpg" alt="">
-{%endblock quotes%}
+{% extends 'base.html'%}
     {%block quiz%}
+    <!-- <div class="info">
+        {%if session['authenticated']%}
+            <h2>Welcome {{session['username']}}</h2>
+        {%else%}
+            <h2>Welcome Guest</h2>
+        {%endif%}
+        <h4 class="message">{{message}}</h4>
+        <h4 class="Score">You're score is {{score}}</h4>
+        <h2>SPACE QUIZ!!!!!!!!!!</h2>
+    </div> -->
+    
     <div class="wrapper">
         <div class="title">
-            <form action="/q4" method="POST">
-            <h4>4) A medicine used to cure pain,fever & inflammation??</h4>
+            <form action="/q6" method="POST">
+            <h4>Q6)I'm NOT closest to the sun but i'm the hottest planet. Who am i???  </h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -15,27 +23,31 @@
                 
                 <label for="option-1" class="option-1">
                     <div class="dot"></div>
-                    <div class="text">Anaesthetic</div>
+                    <div class="text">Mercury</div>
                             
                     
                 </label>
                 <label for="option-2" class="option-2">
                     <div class="dot"></div>
-                    <div class="text">Aspirin</div>
+                    <div class="text">Venus</div>
                             
                     
                 </label>
                 <label for="option-3" class="option-3">
                     <div class="dot"></div>
-                    <div class="text">Antacid</div>
-                            
-                    
+                    <div class="text">Mars</div>                    
                 </label>
+
+                <label for="option-4" class="option-4">
+                    <div class="dot"></div>
+                    <div class="text">Jupiter</div>                    
+                </label>
+                
                 <button type="submit" class="btn-gradient">Click to Submit</button>
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your score is {{score}}</h5>
             </div>
+        </form>
         </div>
-    </form>
     </div>
-    {%endblock quiz%}
+{%endblock quiz%}

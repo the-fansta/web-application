@@ -1,69 +1,97 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN PAGE</title>
-    <link rel="stylesheet" href="./static/style.css">
-<style>
-   
-    body{
-        background-image: url(./static/photo-1603796846097-bee99e4a601f.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-   
-    p{
-     font-size:25px ;
-     line-height: 30px;
-     color: #000;
-     text-align: center;
-     font-weight: 900;
-
-    }
-    form label{
-            color: rgb(0, 12, 12);
-            font-weight: normal;
-            font-size: xx-large;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    }
-    form{
-        margin-top: 10%;
-        width: 15%;
-        height: 500px;
-        margin-left: 5%;
-        padding: 30px;
-        line-height: 30px;
-        background-color: transparent;
-    }
-    button{
-        color: rgb(93, 226, 40);
-        background-color: rgb(17, 8, 68);
-        padding:6%;
-        border-radius: 20px;
-        font-weight: bold;
-    }
-    button:hover{
-        background-color: rgb(238, 40, 26);
-    }
-    input{
-        background-color: rgb(245, 245, 245);
-        color: rgb(151, 152, 190);
-        font-weight: bolder;     
-    }
+{%extends 'base.html'%}
+{%block style%}
+    <style>
+        form{
+            background-color: rgba(0,0, 20, 0.5);
+            font-size: 25px;
+            line-height: 30px;
+            color: seashell;
+            border-radius: 15px;
+            padding: 10px;
+            margin-top: 5%;
+            border: thin solid;
+            box-shadow: 10px 10px 50px 0 ;
+        }
+        form input{
+            background: none;
+            border: none;
+            border-bottom: 3px solid green;
+            padding: 10px;
+        }
+        .button{
+            margin: 10% 0 0 0;
+            margin-bottom: 10%;
+        }
+     
+        form .login{
+            margin-left: 5%;
+        }
+        a{
+            color: #fff;
+        }
+        h2{
+            background: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            box-sizing: border-box;
+            border-radius: 10px;
+            width: 100%;
+            text-decoration: underline red;
+            text-shadow: 4px 4px black;
+            margin-bottom: 10%;
+            margin-left: 15%;
+        }
+        .signin{
+            padding: 10px;
+        }
+        .info a{
+            font-size: medium;
+            
+        }
+        .info{
+            width: 100%;
+            margin-left: 0px;
+        }
+        ::-webkit-input-placeholder { 
+        color: rgb(235, 96, 119);
+        font-size: medium;
+        }
+    
+       form{
+           position: absolute;
+           top: 100px;
+           left: 25%;
+           width: 30%;
+           padding: 20px;
+       }
+       input{
+           color: pink;
+           font-size: large;
+       }
     </style>
-</style>
-</head>
-<body>
-    <form action="/validate_user">
-        <p>REGISTER</p>
-        <label for="">Username :</label>
-        <input type="text" name="username">
-        <label for="">Password :</label>
-        <input type="password" name="password">
-        <button type="submit">Submit</button>
+ {%endblock style%}   
+
+ {%block content%}
+    <form action="/validate_user" method="POST">
+        {%if registered%}
+        <h2>{{message}}</h2>
+        {%endif%}
+        <h2>Login</h2>
+    <div class="signin">
+        
+        <div class="user">
+     
+            <input type="text" name="username" id="" placeholder="Username">
+        </div> <br>
+        <div class="password">
+ 
+            <input type="password" name="password" id="" placeholder="Password">
+        </div>
+        <div class="button">
+            <button type="submit" class="btn-gradient">Submit</button>
+        </div>
+        <div class="info">
+            <a href="/register">don't have an account? Sign Up here</a>
+        </div>
+    </div>
     </form>
-    {{message}}
-</body>
-</html>
+{%endblock content%}

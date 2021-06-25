@@ -1,10 +1,14 @@
 {%extends "base.html"%}
-    {%block content%}
+
+{%block quotes%}
+<img src="../static/hello-i-m-nik-z1d-LP8sjuI-unsplash.jpg" alt="">
+{%endblock quotes%}
+    {%block quiz%}
     
     <div class="wrapper">
         <div class="title">
-            <form action="/validate_q2" method="POST">
-            <h4>2) Which scientist formulated the periodic table??</h4>
+            <form action="/q2" method="POST">
+            <h4>Q2) Which scientist formulated the periodic table??</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -14,8 +18,7 @@
                 <label for="option-1" class="option-1">
                     <div class="dot"></div>
                     <div class="text">John Dalton</div>
-                            
-                    
+ 
                 </label>
                 <label for="option-2" class="option-2">
                     <div class="dot"></div>
@@ -29,12 +32,11 @@
                             
                     
                 </label>
-                <button><a href="/q3">Next</a></button>
-                <button type="submit">Click to Submit</button>
+                <button type="submit" class="btn-gradient">Click to Submit</button>
                 <h5 class="message">{{message}}</h5> 
                 <h5 class="Score">Your score is {{score}}</h5>
             </div>
         </div>
     </form>
     </div>
-    {%endblock%}
+    {%endblock quiz%}
