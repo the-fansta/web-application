@@ -17,9 +17,9 @@
         <nav >
             <ul>
                 <li><a href="/">HOME</a></li>
-                <li><a href="/aboutme">ABOUT ME</a></li>
                 <li><a href="/register">LOGIN/REGISTER</a></li>  
-                <li><a href="/get_q1">QUIZ</a></li>  
+                <li><a href="/q1">QUIZ</a></li>  
+                <li><a href="/index">ABOUT ME</a></li>
 
                 <li><a href="https://givemefive.ai/projects/nextcreator/divvya_agrawal/">MY PROJECTS</a></li>
             </ul>
@@ -32,7 +32,7 @@
           {% if messages %}
             <ul class=flashes>
             {% for message in messages %}
-              <li>Your Score is  - {{ message }}</li>
+              <li>{{ message }}</li>
             {% endfor %}
             </ul>
           {% endif %}

@@ -1,13 +1,23 @@
 {%extends "base.html"%}
 {%block quotes%}
-<img src="../static/mert-talay-KYZoOmpn1Aw-unsplash.jpg" alt="">
+{%block style%}
+<style>
+    .wrapper.box{
+        background-color: gold;
+    }
+    .wrapper .title{
+        background-color: orangered;
+    }
+</style>
+{%endblock style%}
+<img src="../static/3.webp" alt="">
 {%endblock quotes%}
     {%block quiz%}
     
     <div class="wrapper">
         <div class="title">
             <form action="/q1" method="POST">
-            <h4>Q1) Which branch of science deals with forms of energy??</h4>
+            <h4>Q1) Which subject deals with forms of energy??</h4>
             <div class="box">
                 <input type="radio" name="select" id="option-1" value="1">
                 <input type="radio" name="select" id="option-2" value="2">
@@ -16,19 +26,19 @@
                 
                 <label for="option-1" class="option-1">
                     <div class="dot"></div>
-                    <div class="text">Biology</div>
+                    <div class="text">A.Biology</div>
                             
                     
                 </label>
                 <label for="option-2" class="option-2">
                     <div class="dot"></div>
-                    <div class="text">Chemistry</div>
+                    <div class="text">B.Chemistry</div>
                             
                     
                 </label>
                 <label for="option-3" class="option-3">
                     <div class="dot"></div>
-                    <div class="text">Physics</div>
+                    <div class="text">C.Physics</div>
                             
                     
                 </label>
